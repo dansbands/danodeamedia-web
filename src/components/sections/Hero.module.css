@@ -1,0 +1,66 @@
+.hero {
+  padding: var(--space-8) 0 var(--space-7);
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--font-size-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: var(--space-3) 0 0;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: var(--space-4) 0 0;
+  max-width: 60ch;
+  color: var(--color-muted);
+  font-size: var(--font-size-3);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  font-size: var(--font-size-1);
+}
+
+.primary {
+  background: color-mix(in srgb, var(--color-primary), transparent 75%);
+  color: var(--color-text);
+}
+
+.secondary {
+  background: color-mix(in srgb, var(--color-surface), transparent 10%);
+  color: var(--color-text);
+}
+
+.primary:hover,
+.secondary:hover {
+  text-decoration: none;
+  border-color: color-mix(in srgb, var(--color-primary), transparent 55%);
+}
