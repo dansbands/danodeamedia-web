@@ -1,11 +1,11 @@
-import { Contact, Experience, Hero, WorkCarousel } from "@/components/sections";
+import { Contact, Hero, Professional, RecentWork } from "@/components/sections";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Experience />
-      <WorkCarousel />
+      <Professional />
+      <RecentWork />
       <Contact />
     </>
   );

@@ -1,0 +1,202 @@
+.jumbotron {
+  background: rgba(51, 59, 80, 0.98) !important;
+  margin: 0 !important;
+}
+
+.workPage {
+  color: rgba(238, 242, 255, 0.86);
+  line-height: 1.6;
+}
+
+.main2 {
+  min-height: 100vh;
+}
+
+.workPage a {
+  color: rgba(238, 242, 255, 0.86);
+  text-decoration: none;
+}
+
+.workPage a:hover {
+  color: lightgray;
+}
+
+.workIndex {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 124px 16px 48px;
+}
+
+.workIndexTitle {
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 0 0 6px;
+}
+
+.workIndexIntro {
+  max-width: 70ch;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.workIndexList {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.workIndexCard {
+  grid-column: 1 / -1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(51, 59, 80, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.workIndexCardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.workIndexCardTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.workIndexStatus {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  border: 1px solid rgba(33, 212, 79, 0.4);
+  background: rgba(33, 212, 79, 0.1);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.workIndexCardBlurb {
+  margin: 10px 0 12px;
+  max-width: 90ch;
+}
+
+.workIndexCardLink {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.workIndexCardLink:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.caseStudy {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 124px 16px 56px;
+}
+
+.caseStudyBreadcrumbs a {
+  text-decoration: underline;
+  color: rgba(238, 242, 255, 0.82);
+}
+
+.caseStudyTitle {
+  margin: 10px 0 0;
+  font-size: 46px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.caseStudySubtitle {
+  margin: 10px 0 0;
+  font-size: 18px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.caseStudyMeta {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.caseStudySummary {
+  margin-top: 14px;
+  max-width: 90ch;
+}
+
+.caseStudyBlock {
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(51, 59, 80, 0.34);
+  padding: 16px;
+}
+
+.caseStudyBlock h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.caseStudyBlock h4 {
+  margin: 14px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.caseStudyChecklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 0;
+}
+
+.caseStudyChecklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.caseStudyChecklist li:last-child {
+  border-bottom: 0;
+}
+
+.caseStudyChecklist input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.caseStudyBullets {
+  margin: 12px 0 0;
+  padding-left: 22px;
+}
+
+.caseStudyBody {
+  max-width: 95ch;
+}
+
+.caseStudyBody ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 10px 0 0;
+}
+
+.caseStudyBody ul ul {
+  list-style: circle;
+  margin-top: 8px;
+}
+
+.caseStudyBody li {
+  margin: 6px 0;
+}

@@ -12,14 +12,17 @@ body {
   height: 100%;
 }
 
+html {
+  font-family: var(--font-sans);
+}
+
 body {
   margin: 0;
   color: var(--color-text);
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(110, 168, 254, 0.18), transparent 60%),
-    var(--color-bg);
+  background: var(--color-bg);
   font-family: var(--font-sans);
   font-size: var(--font-size-2);
-  line-height: 1.6;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,7 +47,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--color-primary), white 20%);
+  outline: var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -56,5 +59,12 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Helper: allow sections to opt into smooth scrolling when not reduced */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }

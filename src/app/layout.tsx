@@ -1,26 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
+import "../styles/globals.css";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "Dan Odea",
-    template: "%s | Dan Odea",
+    default: "Dan O'Dea Media",
+    template: "%s | Dan O'Dea Media",
   },
-  description: "Staff frontend engineer focused on clean, accessible, maintainable UI.",
+  description: "Dan O'Dea Media",
+  icons: {
+    icon: "/dam/images/Favicon3.png",
+    apple: "/dam/images/Favicon3.png",
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />

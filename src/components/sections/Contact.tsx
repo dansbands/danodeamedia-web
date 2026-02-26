@@ -5,7 +5,8 @@ import { useState } from "react";
 import styles from "./Contact.module.css";
 
 type FormValues = {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   message: string;
   company: string; // honeypot
@@ -25,7 +26,7 @@ export function Contact() {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    defaultValues: { name: "", email: "", message: "", company: "" },
+    defaultValues: { firstName: "", lastName: "", email: "", message: "", company: "" },
   });
 
   const onSubmit = handleSubmit(async (values) => {
@@ -59,72 +60,87 @@ export function Contact() {
   });
 
   return (
-    <section id="contact" className={styles.section} aria-label="Contact">
-      <div className={styles.inner}>
-        <header className={styles.header}>
-          <h2 className={styles.title}>Contact</h2>
-          <p className={styles.subtitle}>Send a note. I usually respond within a day.</p>
-        </header>
+    <section id="contact" className={styles.smooth} aria-label="Contact">
+      <div className={styles.contactOuter}>
+        <div className={styles.contactInner}>
+          <div className={styles.column1}>
+            <h1>CONTACT</h1>
+            <p>
+              I hope you enjoyed my site. If you have any further questions, or have a position
+              open, I would love to hear from you!
+            </p>
+          </div>
 
-        <form className={styles.form} onSubmit={onSubmit}>
-          <div className={styles.row}>
-            <label className={styles.label}>
-              Name
+          <div className={styles.column2}>
+            <form className={styles.contactForm} onSubmit={onSubmit}>
+              <label>First Name:</label>
               <input
-                className={styles.input}
-                {...register("name", { required: true, minLength: 2 })}
-                autoComplete="name"
+                className={styles.formControl}
+                {...register("firstName", { required: true, minLength: 2 })}
+                autoComplete="given-name"
+                name="firstName"
               />
-              {errors.name ? <span className={styles.error}>Please enter your name.</span> : null}
-            </label>
-            <label className={styles.label}>
-              Email
+              {errors.firstName ? (
+                <div className={styles.errorMessage}>First name is required.</div>
+              ) : null}
+
+              <label>Last Name:</label>
               <input
-                className={styles.input}
+                className={styles.formControl}
+                {...register("lastName", { required: true, minLength: 2 })}
+                autoComplete="family-name"
+                name="lastName"
+              />
+              {errors.lastName ? (
+                <div className={styles.errorMessage}>Last name is required.</div>
+              ) : null}
+
+              <label>Email:</label>
+              <input
+                className={styles.formControl}
+                type="email"
                 {...register("email", { required: true })}
                 autoComplete="email"
                 inputMode="email"
+                name="email"
               />
-              {errors.email ? <span className={styles.error}>Please enter a valid email.</span> : null}
-            </label>
-          </div>
+              {errors.email ? <div className={styles.errorMessage}>Email is required.</div> : null}
 
-          <label className={styles.label}>
-            Message
-            <textarea
-              className={styles.textarea}
-              rows={6}
-              {...register("message", { required: true, minLength: 10 })}
-            />
-            {errors.message ? (
-              <span className={styles.error}>Please enter a message (10+ chars).</span>
-            ) : null}
-          </label>
+              <label>Message:</label>
+              <textarea
+                className={styles.formControl}
+                {...register("message", { required: true, minLength: 10 })}
+                name="message"
+              />
+              {errors.message ? (
+                <div className={styles.errorMessage}>Message must be 10+ characters.</div>
+              ) : null}
 
-          {/* Honeypot: hidden field for bots */}
-          <div className={styles.honeypot} aria-hidden="true">
-            <label>
-              Company
-              <input tabIndex={-1} autoComplete="off" {...register("company")} />
-            </label>
-          </div>
+              {/* Honeypot: hidden field for bots */}
+              <div className={styles.honeypot} aria-hidden="true">
+                <label>
+                  Company
+                  <input tabIndex={-1} autoComplete="off" {...register("company")} />
+                </label>
+              </div>
 
-          <div className={styles.actions}>
-            <button className={styles.button} type="submit" disabled={status.state === "submitting"}>
-              {status.state === "submitting" ? "Sending…" : "Send"}
-            </button>
-            {status.state === "success" ? (
-              <p className={styles.success} role="status">
-                Message sent.
-              </p>
-            ) : null}
-            {status.state === "error" ? (
-              <p className={styles.errorText} role="alert">
-                {status.message}
-              </p>
-            ) : null}
+              <button className={styles.btn} type="submit" disabled={status.state === "submitting"}>
+                {status.state === "submitting" ? "Sending…" : "Send Message"}
+              </button>
+
+              {status.state === "success" ? (
+                <p className={styles.success} role="status">
+                  Message sent.
+                </p>
+              ) : null}
+              {status.state === "error" ? (
+                <p className={styles.errorText} role="alert">
+                  {status.message}
+                </p>
+              ) : null}
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );

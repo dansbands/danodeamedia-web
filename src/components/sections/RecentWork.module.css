@@ -1,0 +1,104 @@
+.smooth {
+  position: relative;
+}
+
+.gray {
+  color: var(--color-muted);
+}
+
+.title {
+  font-size: 55px;
+  letter-spacing: 10px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.portfolio {
+  padding-top: 300px;
+  background: url(/dam/images/chrysler-center-bg.9450b219.jpg) no-repeat 50% fixed;
+  background-size: cover;
+  height: 1000px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container a {
+  color: #bec7d5;
+  transition: 0.5s;
+}
+
+.container a:hover {
+  color: var(--color-primary);
+}
+
+.row {
+  height: 320px;
+  margin-top: 50px;
+}
+
+.row :global(img) {
+  display: inline-block;
+  margin: 0 12px;
+  border: 3px solid white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .portfolio {
+    padding-top: 250px;
+    height: 1000px;
+    background-attachment: scroll;
+  }
+
+  .container {
+    top: 5%;
+    overflow: hidden;
+  }
+
+  .row {
+    height: 250px;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .row :global(img) {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio {
+    padding-top: 250px;
+    height: 600px;
+  }
+
+  .title {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

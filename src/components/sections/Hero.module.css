@@ -1,66 +1,193 @@
-.hero {
-  padding: var(--space-8) 0 var(--space-7);
+.smooth {
+  position: relative;
 }
 
-.inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-5);
+.wrapper {
+  height: 90%;
 }
 
-.kicker {
+.green {
+  color: var(--color-primary);
+}
+
+.main {
+  background: url(/dam/images/hero.884eaffc.png) no-repeat 100% fixed;
+  background-size: cover;
+  position: relative;
+  height: 900px;
+  color: white;
+  padding-bottom: 500px;
+  font-family: var(--font-sans);
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(126, 139, 153, 0.6);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: absolute;
+  z-index: 1;
+  width: 40%;
+  text-align: left;
+  margin-top: 120px;
+  margin-left: 25%;
+}
+
+.main h1 {
+  font-size: 70px;
   margin: 0;
-  color: var(--color-muted);
-  font-size: var(--font-size-1);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 400;
 }
 
-.title {
-  margin: var(--space-3) 0 0;
-  font-size: clamp(2rem, 3.5vw, 3.25rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+.main h2 {
+  font-size: 16px;
+  margin: 0;
 }
 
-.subtitle {
-  margin: var(--space-4) 0 0;
-  max-width: 60ch;
-  color: var(--color-muted);
-  font-size: var(--font-size-3);
+#top {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.actions {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-5);
-  flex-wrap: wrap;
+.welcomeOuter {
+  position: relative;
 }
 
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-2);
-  border: 1px solid var(--color-border);
+.welcome {
+  position: absolute;
+  background-color: #333b50;
+  color: white;
+  height: 400px;
+  width: 50%;
+  font-size: 16px;
+  margin: -370px 25% 0;
+  box-shadow: var(--shadow-1);
+  border-radius: 18px;
+}
+
+.welcomeContainer {
+  position: relative;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-top: 35px;
+  line-height: 1.6;
+}
+
+.welcome img {
+  height: 100px;
+  width: 100px;
+}
+
+.btn {
   text-decoration: none;
-  font-size: var(--font-size-1);
+  color: white;
+  background-color: transparent;
+  border: 3px solid var(--color-primary);
+  padding: 10px;
+  min-width: 120px;
+  display: inline-block;
+  transition: var(--transition-standard);
+  border-radius: 6px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.primary {
-  background: color-mix(in srgb, var(--color-primary), transparent 75%);
-  color: var(--color-text);
+.btn + .btn {
+  margin-left: 15px;
 }
 
-.secondary {
-  background: color-mix(in srgb, var(--color-surface), transparent 10%);
-  color: var(--color-text);
-}
-
-.primary:hover,
-.secondary:hover {
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-primary);
+  color: #333b50;
   text-decoration: none;
-  border-color: color-mix(in srgb, var(--color-primary), transparent 55%);
+}
+
+@media only screen and (min-width: 1025px) {
+  .main {
+    min-height: 720px;
+    padding-bottom: 0;
+    background-position: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main {
+    height: 65svh;
+    min-height: 520px;
+    padding-bottom: 0;
+    background-attachment: scroll;
+    background-position: 100%;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 90px 10% 22px;
+  }
+
+  .welcome {
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .welcomeOuter {
+    background-color: #333b50;
+  }
+
+  .welcomeContainer {
+    width: 90%;
+    margin: 0 5%;
+    padding: 28px 0 26px;
+  }
+
+  .btn {
+    border: 1px solid var(--color-primary);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main {
+    height: 56svh;
+    min-height: 420px;
+    padding-bottom: 0;
+  }
+
+  .main h1 {
+    font-size: 54px;
+  }
+
+  #top {
+    font-size: 12px;
+  }
+
+  .welcomeContainer {
+    padding: 22px 0 20px;
+  }
+
+  .welcome img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btn + .btn {
+    margin-left: 0;
+  }
 }

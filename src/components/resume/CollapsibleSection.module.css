@@ -1,0 +1,29 @@
+.details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2);
+  background: color-mix(in srgb, var(--color-surface), transparent 15%);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+
+.summary {
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.body {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--color-text);
+}
+
+@media (max-width: 720px) {
+  .summary {
+    padding: var(--space-4);
+  }
+
+  .body {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+}

@@ -1,104 +1,124 @@
-.section {
-  padding: var(--space-7) 0;
+.smooth {
+  position: relative;
 }
 
-.inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-5);
+.contactOuter {
+  position: relative;
 }
 
-.header {
-  display: grid;
-  gap: var(--space-2);
+.contactInner {
+  min-height: 600px;
+  overflow: auto;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333b50;
+  width: min(1140px, 92vw);
+  margin: 150px auto;
+  position: relative;
+  font-family: var(--font-sans);
+  color: white;
 }
 
-.title {
+.contactInner h1 {
+  font-weight: 400;
+}
+
+.column1 {
+  width: 45%;
+  height: 80%;
+  display: inline-block;
+  text-align: left;
+  line-height: 200%;
+}
+
+.column1 h1 {
+  font-size: 40px;
+  margin: 0 0 15px;
+}
+
+.column1 p {
+  font-size: 16px;
   margin: 0;
-  font-size: var(--font-size-6);
-  letter-spacing: -0.02em;
+  line-height: 1.6;
 }
 
-.subtitle {
+.column2 {
+  width: 45%;
+  height: 80%;
+  display: inline-block;
   margin: 0;
-  color: var(--color-muted);
+  position: static;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: 100;
 }
 
-.form {
-  margin-top: var(--space-5);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-3);
-  background: color-mix(in srgb, var(--color-surface), transparent 10%);
-  box-shadow: var(--shadow-1);
-  padding: var(--space-5);
+.contactForm label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
 }
 
-.row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
-}
-
-.label {
-  display: grid;
-  gap: var(--space-2);
-  font-size: var(--font-size-1);
-  color: var(--color-muted);
-}
-
-.input,
-.textarea {
-  width: 100%;
-  border: 1px solid var(--color-border);
-  background: transparent;
-  color: var(--color-text);
-  border-radius: var(--radius-2);
-  padding: var(--space-3);
+.formControl {
+  margin-bottom: 15px;
+  width: 90%;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 4px;
   font: inherit;
 }
 
-.textarea {
-  resize: vertical;
+.formControl:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
 }
 
-.error {
-  color: #fca5a5;
-  font-size: var(--font-size-1);
+.btn {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: 3px solid var(--color-primary);
+  padding: 10px;
+  width: 150px;
+  display: inline-block;
+  transition: var(--transition-standard);
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-  flex-wrap: wrap;
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-primary);
+  color: #333b50;
 }
 
-.button {
-  appearance: none;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2);
-  background: color-mix(in srgb, var(--color-primary), transparent 75%);
-  color: var(--color-text);
-  padding: var(--space-3) var(--space-4);
-  font-weight: 600;
-}
-
-.button:disabled {
+.btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
 
+.errorMessage {
+  color: #ff6b6b;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 .success {
-  margin: 0;
-  color: color-mix(in srgb, var(--color-primary), white 15%);
-  font-size: var(--font-size-1);
+  margin: 10px 0 0;
+  color: var(--color-primary);
+  line-height: 1.4;
 }
 
 .errorText {
-  margin: 0;
-  color: #fca5a5;
-  font-size: var(--font-size-1);
+  margin: 10px 0 0;
+  color: #ff6b6b;
+  line-height: 1.4;
 }
 
 .honeypot {
@@ -109,8 +129,36 @@
   overflow: hidden;
 }
 
-@media (max-width: 720px) {
-  .row {
-    grid-template-columns: 1fr;
+@media only screen and (max-width: 1024px) {
+  .contactInner {
+    width: 100%;
+    margin: 150px 0;
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2 {
+    width: unset;
+  }
+
+  .column1 {
+    margin-bottom: 30px;
+  }
+
+  .column1 h1 {
+    font-size: 28px;
+  }
+
+  .btn {
+    border: 1px solid var(--color-primary);
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contactInner {
+    margin: 50px 0;
+    height: auto;
+    min-height: unset;
   }
 }

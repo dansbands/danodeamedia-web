@@ -1,0 +1,278 @@
+.professional {
+  padding-top: 150px;
+  background: url(/dam/images/laptop-journal-book-coffee.97e0f9f1.jpg) no-repeat 50% fixed;
+  background-size: cover;
+  height: 1000px;
+  color: white;
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+.anchor {
+  height: 1px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gray {
+  color: var(--color-muted);
+}
+
+.title {
+  font-size: 55px;
+  letter-spacing: 10px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+@keyframes grow95 {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 5%;
+  }
+}
+
+@keyframes grow85 {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 15%;
+  }
+}
+
+@keyframes textDissolve {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills {
+  margin: 10px auto 0;
+  position: relative;
+  width: 98%;
+}
+
+.apps {
+  float: left;
+  width: 15%;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.apps p {
+  padding: 10.5px 0;
+  position: relative;
+  z-index: 2;
+  color: lightgray;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.grid {
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  float: left;
+  padding: 10px 0;
+  position: relative;
+  width: 70%;
+}
+
+.bar {
+  float: left;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  height: 20px;
+  margin-bottom: 22.5px;
+}
+
+.inner,
+.inner2,
+.inner3 {
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.pct95 .inner {
+  animation-duration: 2s;
+  animation-name: grow95;
+  right: 5%;
+}
+
+.pct95 .inner2 {
+  animation-duration: 3s;
+  animation-name: grow95;
+  right: 5%;
+}
+
+.pct95 .inner3 {
+  animation-duration: 4s;
+  animation-name: grow95;
+  right: 5%;
+}
+
+.pct85 .inner,
+.pct85 .inner2,
+.pct85 .inner3 {
+  animation-duration: 4s;
+  animation-name: grow85;
+  right: 15%;
+}
+
+.right {
+  animation-duration: 10s;
+  animation-name: textDissolve;
+  position: absolute;
+  right: 10%;
+  text-align: right;
+  width: 105%;
+}
+
+.right p {
+  margin: 0;
+}
+
+.vDivider {
+  border-right: 1px dotted var(--color-muted);
+  position: absolute;
+  left: 0;
+  right: 25%;
+  bottom: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.one {
+  right: 75%;
+}
+
+.two {
+  right: 50%;
+}
+
+.three {
+  right: 25%;
+}
+
+.scale {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  padding-bottom: 30px;
+}
+
+.scale p {
+  position: absolute;
+  bottom: 0;
+  left: -0.3%;
+  margin: 0;
+}
+
+.zero {
+  left: -0.3%;
+}
+
+.oneText {
+  left: 24%;
+}
+
+.twoText {
+  left: 49%;
+}
+
+.threeText {
+  left: 74%;
+}
+
+.fourText {
+  left: 99%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner,
+  .inner2,
+  .inner3,
+  .right {
+    animation: none !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .professional {
+    padding-top: 50px;
+    height: 1200px;
+    background-attachment: scroll;
+  }
+
+  .container {
+    margin-top: 50px;
+    top: 40%;
+  }
+
+  .apps {
+    width: 20%;
+    font-size: 20px;
+  }
+
+  .grid {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .professional {
+    height: 900px;
+  }
+
+  .apps {
+    width: 25%;
+  }
+
+  .grid {
+    width: 60%;
+  }
+
+  .title {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .scale p {
+    font-size: 12px;
+  }
+}

@@ -1,22 +1,47 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Hero.module.css";
 
 export function Hero() {
   return (
-    <section className={styles.hero} aria-label="Intro">
-      <div className={styles.inner}>
-        <p className={styles.kicker}>Staff Frontend Engineer</p>
-        <h1 className={styles.title}>I build clean, accessible, maintainable web UIs.</h1>
-        <p className={styles.subtitle}>
-          Next.js App Router, TypeScript, CSS Modules, and design tokens — with a focus on long-term velocity.
-        </p>
-        <div className={styles.actions}>
-          <Link className={styles.primary} href="/#contact">
-            Contact
-          </Link>
-          <Link className={styles.secondary} href="/portfolio">
-            View work
-          </Link>
+    <section id="home" className={styles.smooth} aria-label="Home">
+      <div className={styles.wrapper}>
+        <div className={styles.main}>
+          <div className={styles.container}>
+            <h1>
+              I<span className={styles.green}>&apos;</span>M
+            </h1>
+            <h1>DAN</h1>
+            <h1>
+              O<span className={styles.green}>&apos;</span>DEA<span className={styles.green}>.</span>
+            </h1>
+            <h2 id="top">SENIOR SOFTWARE ENGINEER</h2>
+          </div>
+        </div>
+
+        <div className={styles.welcomeOuter}>
+          <div className={styles.welcome}>
+            <div className={styles.welcomeContainer} id="welcome">
+              <Image
+                src="/dam/images/favicon2.bb490f79.png"
+                alt="favicon"
+                width={140}
+                height={140}
+                priority
+              />
+              <p>Welcome to my site.</p>
+              <p>
+                I strive to create beautiful interfaces that are intuitive and enjoyable to use.
+              </p>
+              <p>Feel free to have a look around.</p>
+              <Link className={styles.btn} href="/portfolio">
+                Recent Work
+              </Link>
+              <a className={styles.btn} href="/resume" target="_blank" rel="noreferrer">
+                Résumé
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

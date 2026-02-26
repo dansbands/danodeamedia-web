@@ -6,6 +6,8 @@ export const runtime = "nodejs";
 
 type ContactRequestBody = {
   name?: string;
+  firstName?: string;
+  lastName?: string;
   email?: string;
   message?: string;
   company?: string; // honeypot
@@ -26,6 +28,8 @@ export async function POST(req: Request) {
 
   const validated = validateContact({
     name: body.name,
+    firstName: body.firstName,
+    lastName: body.lastName,
     email: body.email,
     message: body.message,
   });
