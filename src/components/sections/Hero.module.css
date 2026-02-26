@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  position: relative;
+  height: 90%;
 }
 
 .green {
@@ -56,20 +56,19 @@
 
 .welcomeOuter {
   position: relative;
-  padding-bottom: 60px;
 }
 
 .welcome {
-  position: relative;
+  position: absolute;
   background-color: #333b50;
   color: white;
   height: 400px;
   width: 50%;
   font-size: 16px;
-  margin: -370px auto 0;
+  margin: -370px 25% 0;
   box-shadow: var(--shadow-1);
   border-radius: 18px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .welcomeContainer {
