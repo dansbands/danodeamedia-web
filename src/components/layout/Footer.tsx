@@ -5,7 +5,7 @@ const COPYRIGHT_YEAR = 2025;
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-site-footer="true">
       <div className={styles.left}>
         <Image
           className={styles.icon}

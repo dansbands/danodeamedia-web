@@ -293,13 +293,13 @@ const skillIcons = [
   "/dam/icons/MUI.f519b238.svg",
   "/dam/icons/Next.92390f75.svg",
   "/dam/icons/Node.ed3d651c.svg",
-  "/dam/icons/Postgres.50f0e1e6.svg",
-  "/dam/icons/Rails.0194d7fa.svg",
-  "/dam/icons/React.2bf0c9bf.svg",
-  "/dam/icons/Redux.e82f4931.svg",
-  "/dam/icons/StyledComponents.ffc31403.svg",
-  "/dam/icons/Typescript.3e5eaaf9.svg",
-  "/dam/icons/xState.2db6d9da.svg",
+  "/dam/icons/Postgres.053788d5.svg",
+  "/dam/icons/Rails.00e35818.svg",
+  "/dam/icons/React.0e664552.svg",
+  "/dam/icons/Redux.2aca4c41.svg",
+  "/dam/icons/StyledComponents.3f5d0a6b.svg",
+  "/dam/icons/TypeScript.fe3543ba.svg",
+  "/dam/icons/xState.fbc442d0.svg",
 ];
 
 function ExperienceBlock({ exp }: { exp: Experience }) {
@@ -322,11 +322,11 @@ function ExperienceBlock({ exp }: { exp: Experience }) {
 }
 
 export default function ResumeClient() {
-  const [isContactCollapsed, setIsContactCollapsed] = useState(true);
-  const [isWorkCollapsed, setIsWorkCollapsed] = useState(true);
-  const [isEducationCollapsed, setIsEducationCollapsed] = useState(true);
-  const [isOtherWorkCollapsed, setIsOtherWorkCollapsed] = useState(true);
-  const [isSkillsCollapsed, setIsSkillsCollapsed] = useState(true);
+  const [isContactCollapsed, setIsContactCollapsed] = useState(false);
+  const [isWorkCollapsed, setIsWorkCollapsed] = useState(false);
+  const [isEducationCollapsed, setIsEducationCollapsed] = useState(false);
+  const [isOtherWorkCollapsed, setIsOtherWorkCollapsed] = useState(false);
+  const [isSkillsCollapsed, setIsSkillsCollapsed] = useState(false);
 
   const contactToggleText = useMemo(() => (isContactCollapsed ? "+" : "−"), [isContactCollapsed]);
   const workToggleText = useMemo(() => (isWorkCollapsed ? "+" : "−"), [isWorkCollapsed]);
@@ -442,7 +442,7 @@ export default function ResumeClient() {
                   <div className={styles.iconCircle}>
                     <HouseIcon />
                   </div>
-                  <a href="/resume">Jersey City, NJ</a>
+                  <span>Jersey City, NJ</span>
                 </div>
               </div>
             </div>

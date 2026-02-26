@@ -371,13 +371,13 @@
 }
 
 @media print {
-  :global(.footer),
-  :global(.footer2),
+  :global([data-site-header='true']),
+  :global([data-site-footer='true']),
   .printButton {
     display: none !important;
   }
 
-  body {
+  :global(body) {
     margin: 0;
     width: 1100px;
   }
@@ -392,7 +392,7 @@
     page-break-after: always;
   }
 
-  a[href]::after {
+  :global(a[href]::after) {
     content: none !important;
   }
 }

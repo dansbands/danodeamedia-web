@@ -34,12 +34,12 @@ export function Hero() {
                 I strive to create beautiful interfaces that are intuitive and enjoyable to use.
               </p>
               <p>Feel free to have a look around.</p>
-              <Link className={styles.btn} href="/portfolio">
+              <Link className={styles.btn} href="/#recent-work">
                 Recent Work
               </Link>
-              <a className={styles.btn} href="/resume" target="_blank" rel="noreferrer">
+              <Link className={styles.btn} href="/resume">
                 Résumé
-              </a>
+              </Link>
             </div>
           </div>
         </div>

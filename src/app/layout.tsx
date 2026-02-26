@@ -3,6 +3,7 @@ import "../styles/globals.css";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { HashScroll } from "@/components/layout/HashScroll";
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <HashScroll />
         <main>{children}</main>
         <Footer />
       </body>
